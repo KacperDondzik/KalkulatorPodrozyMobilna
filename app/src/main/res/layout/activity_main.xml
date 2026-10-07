@@ -1,19 +1,131 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    android:orientation="vertical"
+    android:background="#F0F0F5">
 
-    <TextView
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:background="#1F2A7C"
+        android:padding="16dp"
+        android:orientation="horizontal">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Kalkulator Podróży"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Autor: Twój Nick"
+            android:textColor="#FFFFFF"
+            android:textSize="14sp" />
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="16dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Dystans w km"
+                android:textColor="#000000"
+                android:textStyle="bold" />
+            <EditText
+                android:id="@+id/etDystans"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Dystans w km"
+                android:inputType="numberDecimal"
+                android:layout_marginBottom="12dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Zużycie paliwa na 100km"
+                android:textColor="#000000"
+                android:textStyle="bold" />
+            <EditText
+                android:id="@+id/etSpalanie"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Zużycie paliwa na 100km"
+                android:inputType="numberDecimal"
+                android:layout_marginBottom="12dp" />
+
+            <RadioGroup
+                android:id="@+id/rgPaliwo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="12dp">
+                <RadioButton
+                    android:id="@+id/rbBenzyna"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Benzyna (6,50 zł)"
+                    android:checked="true" />
+                <RadioButton
+                    android:id="@+id/rbDiesel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Diesel (6,70 zł)" />
+                <RadioButton
+                    android:id="@+id/rbLPG"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="LPG (3,10 zł)" />
+            </RadioGroup>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Liczba pasażerów"
+                android:textColor="#000000"
+                android:textStyle="bold" />
+            <EditText
+                android:id="@+id/etPasazerowie"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Liczba pasażerów"
+                android:text="1"
+                android:inputType="number"
+                android:layout_marginBottom="20dp" />
+
+            <Button
+                android:id="@+id/btnOblicz"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="OBLICZ KOSZT"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:backgroundTint="#1F2A7C"
+                android:textColor="#FFFFFF"
+                android:layout_marginBottom="20dp" />
+
+            <TextView
+                android:id="@+id/tvWynik"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="16dp"
+                android:gravity="center"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:background="#FFFFFF" />
+
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>
