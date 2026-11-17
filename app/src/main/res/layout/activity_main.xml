@@ -24,7 +24,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Autor: Twój Nick"
+            android:text="Autor: Kacper Dondzik"
             android:textColor="#FFFFFF"
             android:textSize="14sp" />
     </LinearLayout>
